@@ -6,6 +6,6 @@
 
     <color name="backgroundColor">#03DAC5</color>
 
-    <color name="btnSignUp">#39796b</color>
-    <color name="btnSignIn">#A9d440</color>
+    <color name="btnSignUp">#ffffff</color>
+    <color name="btnSignIn">#ffffff</color>
 </resources>
