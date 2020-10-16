@@ -73,6 +73,27 @@ public class Home extends AppCompatActivity {
         loadMenu();
     }
 
+
+    private void loadMenu() {
+        adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class, R.layout.menu_item, MenuViewHolder.class, category) {
+            @Override
+            protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
+                viewHolder.txtMenuName.setText(model.getName());
+                Picasso.with(getBaseContext()).load(model.getImage()).into(viewHolder.imageView);
+                final Category clickItem = model;
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        Intent foodList = new Intent( Home.this, FoodList.class);
+                        foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        startActivity(foodList);
+                    }
+                });
+            }
+        };
+        recycler_menu.setAdapter(adapter);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
