@@ -44,7 +44,7 @@ public class SignIn extends AppCompatActivity {
             public void onClick(View view) {
 
                 final ProgressDialog mDialog = new ProgressDialog(SignIn.this);
-                mDialog.setMessage("Please waiting...");
+                mDialog.setMessage("Please wait...");
                 mDialog.show();
 
                 table_user.addValueEventListener(new ValueEventListener() {
@@ -58,7 +58,7 @@ public class SignIn extends AppCompatActivity {
                             user.setPhone(edtPhone.getText().toString());
                             if(user.getPassword().equals(edtPassword.getText().toString()))
                             {
-                                Intent homeIntent = new Intent(SignIn.this, Home.class);
+                                Intent homeIntent = new Intent(SignIn.this, SignUp.class);
                                 Common.currentUser = user;
                                 startActivity(homeIntent);
                                 finish();
