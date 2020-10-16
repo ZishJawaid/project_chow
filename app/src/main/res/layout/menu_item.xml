@@ -8,12 +8,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
             android:id="@+id/menu_image"
             android:scaleType="centerCrop"
-            android:src="@drawable/my_bg"
+            android:src="@drawable/logo_chow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
         <TextView
             android:id="@+id/menu_name"
             android:text="Name of Menu"
@@ -25,4 +27,4 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
-</androidx.cardview.widget.CardView>>
+</androidx.cardview.widget.CardView>
