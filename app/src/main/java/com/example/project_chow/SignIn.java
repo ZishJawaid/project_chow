@@ -30,9 +30,9 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        edtPassword = (MaterialEditText) findViewById(R.id.edtPassword);
-        edtPhone = (MaterialEditText) findViewById(R.id.edtPhone);
-        btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        edtPassword = (MaterialEditText)findViewById(R.id.edtPassword);
+        edtPhone = (MaterialEditText)findViewById(R.id.edtPhone);
+        btnSignIn = (Button)findViewById(R.id.btnSignIn);
 
         // init Firebase
 
@@ -44,42 +44,45 @@ public class SignIn extends AppCompatActivity {
             public void onClick(View view) {
 
                 final ProgressDialog mDialog = new ProgressDialog(SignIn.this);
-                mDialog.setMessage("Please wait...");
+                mDialog.setMessage("Please waiting...");
                 mDialog.show();
 
                 table_user.addValueEventListener(new ValueEventListener() {
-
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                        //Check if user doesn't exist in db
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        // check if user does not exist in DB
                         if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
+                            // Get user info
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                             user.setPhone(edtPhone.getText().toString());
-                            if (user.getPassword().equals(edtPassword.getText().toString())) {
+                            if(user.getPassword().equals(edtPassword.getText().toString()))
                             {
-                                Intent homeIntent = new Intent (SignIn.this, Home.class);
-                                Common.currentUser = user;
-                                startActivity(homeIntent);
-                                finish();
+                                Intent homeIntent = new Intent(SignIn.this, Home.class);
+                            Common.currentUser = user;
+                            startActivity(homeIntent);
+                            finish();
+                        }
+                            else
+                            {
+                                Toast.makeText(SignIn.this, "Wrong password !", Toast.LENGTH_SHORT).show();
                             }
                         }
-                        else
-                        {
-                            mDialog.dismiss();
+                        else {
                             Toast.makeText(SignIn.this, "User does not exist", Toast.LENGTH_SHORT).show();
+                            mDialog.dismiss();
                         }
 
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    public void onCancelled(DatabaseError databaseError) {
 
                     }
                 });
             }
         });
+
 
     }
 }
