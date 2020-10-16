@@ -9,6 +9,14 @@
     tools:context=".SignUp">
 
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo_chow" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginLeft="8dp"
@@ -17,7 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        <com.google.android.material.textfield.TextInputLayout
+            app:startIconDrawable="@drawable/ic_baseline_smartphone_24"
+            app:endIconMode="clear_text"
             android:id="@+id/edtPhone"
             android:hint="Phone Number"
             android:layout_width="match_parent"
@@ -31,8 +41,15 @@
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="11"
             app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            />
+            app:met_singleLineEllipsis="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtName"
