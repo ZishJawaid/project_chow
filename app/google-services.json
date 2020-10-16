@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "143857817944",
+    "firebase_url": "https://chowapp-2c086.firebaseio.com",
+    "project_id": "chowapp-2c086",
+    "storage_bucket": "chowapp-2c086.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143857817944:android:84c70792359d8a40566d2d",
+        "android_client_info": {
+          "package_name": "com.example.project_chow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143857817944-cfihrarlk6t4tdgsj2mctkmu9dkmfmnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOiNZyaiocKssDpDqO3ERU_Bs4GZ4AZMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143857817944-cfihrarlk6t4tdgsj2mctkmu9dkmfmnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
