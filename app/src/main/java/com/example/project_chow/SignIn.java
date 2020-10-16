@@ -58,7 +58,7 @@ public class SignIn extends AppCompatActivity {
                             user.setPhone(edtPhone.getText().toString());
                             if(user.getPassword().equals(edtPassword.getText().toString()))
                             {
-                                Intent homeIntent = new Intent(SignIn.this, SignUp.class);
+                                Intent homeIntent = new Intent(SignIn.this, Home.class);
                                 Common.currentUser = user;
                                 startActivity(homeIntent);
                                 finish();

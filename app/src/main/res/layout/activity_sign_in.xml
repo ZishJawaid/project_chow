@@ -30,6 +30,16 @@
             app:met_primaryColor="@android:color/white"
             app:met_singleLineEllipsis="true"
             />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            app:startIconDrawable="@drawable/ic_baseline_smartphone_24"
+            android:text="01234"
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            android:inputType="phone"/>
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtPassword"
             android:hint="Password"
