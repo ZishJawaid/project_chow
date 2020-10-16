@@ -20,6 +20,7 @@
         <TextView
             android:gravity="center"
             android:id="@+id/txtSlogan"
+            android:textStyle="bold"
             android:text="@string/slogan"
             android:textColor="@android:color/white"
             android:layout_width="200dp"
