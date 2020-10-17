@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent signUp = new Intent(MainActivity.this,SignUp.class);
+                Intent signUp = new Intent(MainActivity.this, SignUp.class);
                 startActivity(signUp);
             }
         });

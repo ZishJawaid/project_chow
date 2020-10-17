@@ -5,7 +5,7 @@
     <color name="colorPrimaryDark">#00251a</color>
     <color name="colorAccent">#39796b</color>
 
-    <color name="backgroundColor">#03DAC5</color>
+    <color name="backgroundColor">#ffe2e2</color>
 
     <color name="btnSignUp">#ffffff</color>
     <color name="btnSignIn">#ffffff</color>
