@@ -75,8 +75,6 @@ public class Home extends AppCompatActivity {
         recycler_menu.setLayoutManager(layoutManager);
         loadMenu();
     }
-
-
     private void loadMenu() {
         adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class, R.layout.menu_item, MenuViewHolder.class, category) {
             @Override
@@ -87,7 +85,7 @@ public class Home extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Intent foodList = new Intent(Home.this, FoodList.class);
+                        Intent foodList = new Intent( Home.this, FoodList.class);
                         foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
                         startActivity(foodList);
                     }
@@ -96,14 +94,12 @@ public class Home extends AppCompatActivity {
         };
         recycler_menu.setAdapter(adapter);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
