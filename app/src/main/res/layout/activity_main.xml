@@ -15,8 +15,8 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="256dp"
+            android:layout_width="321dp"
+            android:layout_height="288dp"
             android:gravity="center"
             android:src="@drawable/chow_logo" />
 
@@ -24,12 +24,12 @@
             android:id="@+id/txtSlogan"
             android:layout_width="301dp"
             android:layout_height="62dp"
+            android:fontFamily="@font/abeezee"
             android:gravity="center"
-            android:textSize="20sp"
             android:text="@string/slogan"
             android:textColor="@android:color/white"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:fontFamily="@font/abeezee_regular "
 
             />
     </LinearLayout>
@@ -43,31 +43,35 @@
 
         <info.hoang8f.widget.FButton
             android:id="@+id/btnSignUp"
-            android:text="Sign Up"
-            android:textColor="@android:color/black"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            fbutton:fButtonColor="@color/btnSignUp"
-            fbutton:shadowColor="@android:color/black"
-            fbutton:shadowEnabled="true"
-            fbutton:shadowHeight="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/abeezee"
+            android:shadowColor=" #2d862d "
+            android:text="Sign Up"
+            android:textColor="@color/btnText"
+            app:shadowColor="#2d862d"
+            android:textStyle="bold"
+            app:shadowHeight="5dp"
             fbutton:cornerRadius="20dp"
-            />
+            fbutton:fButtonColor="@color/btnSignUp"
+             />
+
         <info.hoang8f.widget.FButton
             android:id="@+id/btnSignIn"
-            android:text="Sign In"
-            android:textColor="@android:color/black"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            fbutton:fButtonColor="@color/btnSignIn"
-            fbutton:shadowColor="@android:color/black"
-            fbutton:shadowEnabled="true"
-            fbutton:shadowHeight="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/abeezee"
+            android:shadowColor=" #2d862d "
+            android:text="Sign In"
+            android:textColor="@color/btnText"
+            android:textStyle="bold"
+            app:shadowColor=" #2d862d "
             fbutton:cornerRadius="20dp"
-            />
+            fbutton:fButtonColor="@color/btnSignIn"
+             />
     </LinearLayout>
 </RelativeLayout>
