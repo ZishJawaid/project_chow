@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnSignIn, btnSignUp;
     TextView txtSlogan;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/ABeeZee-Regular.ttf");
         txtSlogan.setTypeface(face);
-
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
 
