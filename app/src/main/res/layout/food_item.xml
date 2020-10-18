@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    app:cardElevation="4dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="0dp"
     android:layout_marginBottom="8dp">
 
     <RelativeLayout
@@ -20,14 +21,17 @@
 
         <TextView
             android:id="@+id/food_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="#4f0e0d"
+            android:gravity="center"
             android:text="Name of food"
             android:textColor="@android:color/white"
-            android:background="#4f0e0d"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_alignParentBottom="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
