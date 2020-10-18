@@ -83,23 +83,19 @@
 
     <info.hoang8f.widget.FButton
         android:id="@+id/btnSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:shadowColor="@color/btnText"
         android:text="Sign Up"
         android:textColor="@color/btnText"
-        android:textStyle="bold"
-        app:shadowColor="@color/btnText"
-        fbutton:cornerRadius="20dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         fbutton:fButtonColor="@color/btnSignUp"
         fbutton:shadowColor="@color/btnText"
+        android:textStyle="bold"
         fbutton:shadowEnabled="true"
-        fbutton:shadowHeight="5dp" />
+        fbutton:shadowHeight="5dp"
+        fbutton:cornerRadius="20dp"
+        />
 </RelativeLayout>

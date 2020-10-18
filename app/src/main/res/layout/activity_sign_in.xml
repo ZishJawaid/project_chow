@@ -83,7 +83,6 @@
         android:text="Sign In"
         android:textColor="@color/btnText"
         android:textStyle="bold"
-        app:shadowColor="@color/btnText"
         fbutton:cornerRadius="20dp"
         fbutton:fButtonColor="@color/btnSignUp"
         fbutton:shadowColor="@color/btnText"
