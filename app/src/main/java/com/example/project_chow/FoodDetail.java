@@ -1,5 +1,6 @@
 package com.example.project_chow;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,10 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.project_chow.Model.Food;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class FoodDetail extends AppCompatActivity {
 
@@ -24,7 +30,6 @@ public class FoodDetail extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference foods;
-
 
 
     @Override
@@ -58,3 +63,29 @@ public class FoodDetail extends AppCompatActivity {
         }
 
     }
+
+    private void getDetailFood(String foodId) {
+        foods.child(foodId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Food food = dataSnapshot.getValue(Food.class);
+
+                Picasso.with(getBaseContext()).load(food.getImage())
+                        .into(food_image);
+
+                collapsingToolbarLayout.setTitle(food.getName());
+
+                food_price.setText(food.getPrice());
+
+                food_name.setText(food.getName());
+
+                food_description.setText(food.getDescription());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+}
