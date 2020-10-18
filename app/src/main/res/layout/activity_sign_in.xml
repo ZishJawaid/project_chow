@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     tools:context=".SignIn">
+
+    <ImageView
+        android:layout_width="149dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/chow_logo" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_marginLeft="8dp"
@@ -14,22 +23,24 @@
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.rengwuxian.materialedittext.MaterialEditText
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtPhone"
-            android:hint="Phone Number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@android:color/white"
-            android:text="0900"
-            android:textColor="@android:color/white"
-            android:textSize="34sp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/btnSignIn"
+            android:hint="Phone Number"
             android:inputType="phone"
+            android:text="0900"
+            android:textColor="@color/btnText"
+            android:textColorHint="@android:color/white"
+            android:textSize="34sp"
             app:met_baseColor="@android:color/white"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="11"
             app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            />
+            app:met_singleLineEllipsis="true" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_height="match_parent"
@@ -40,37 +51,42 @@
             android:textSize="34sp"
             android:inputType="phone"/>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtPassword"
-            android:hint="Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/btnSignIn"
+            android:hint="Password"
+            android:inputType="text"
+            android:text="password"
+            android:textColor="@color/btnText"
             android:textColorHint="@android:color/white"
-            android:text="1234"
-            android:textColor="@android:color/white"
             android:textSize="34sp"
-            android:inputType="textPassword"
             app:met_baseColor="@android:color/white"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="11"
             app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            />
+            app:met_singleLineEllipsis="true" />
     </LinearLayout>
     <info.hoang8f.widget.FButton
         android:id="@+id/btnSignIn"
-        android:text="Sign In"
-        android:textColor="@android:color/black"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        fbutton:fButtonColor="@color/btnSignIn"
-        fbutton:shadowColor="@android:color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:shadowColor="@color/btnText"
+        android:text="Sign In"
+        android:textColor="@color/btnText"
+        android:textStyle="bold"
+        app:shadowColor="@color/btnText"
+        fbutton:cornerRadius="20dp"
+        fbutton:fButtonColor="@color/btnSignUp"
+        fbutton:shadowColor="@color/btnText"
         fbutton:shadowEnabled="true"
-        fbutton:shadowHeight="5dp"
-        fbutton:cornerRadius="4dp"
-        />
+        fbutton:shadowHeight="5dp" />
 </RelativeLayout>
