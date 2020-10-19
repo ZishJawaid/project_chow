@@ -1,7 +1,5 @@
 package com.example.project_chow.Model;
 
-package com.example.project_chow.Model;
-
 import android.media.Image;
 public class Chef {
     private String Name, Image, Description, MenuId;

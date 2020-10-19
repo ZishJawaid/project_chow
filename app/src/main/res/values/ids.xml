@@ -2,4 +2,5 @@
 <resources>
     <item name="chef_image" type="id">16</item>
     <item name="chef_name" type="id">16</item>
+    <item name="recycler_chef" type="id">16</item>
 </resources>
