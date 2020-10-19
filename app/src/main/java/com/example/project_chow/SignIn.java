@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.rengwuxian.materialedittext.MaterialEditText;
+
 
 public class SignIn extends AppCompatActivity {
 
@@ -30,8 +30,8 @@ public class SignIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        edtPassword = (MaterialEditText)findViewById(R.id.edtPassword);
-        edtPhone = (MaterialEditText)findViewById(R.id.edtPhone);
+        edtPassword = (EditText)findViewById(R.id.edtPassword);
+        edtPhone = (EditText)findViewById(R.id.edtPhone);
         btnSignIn = (Button)findViewById(R.id.btnSignIn);
 
         // init Firebase
