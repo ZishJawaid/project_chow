@@ -83,7 +83,7 @@ public class Cart extends AppCompatActivity {
         alertDialog.setView(editAddress);
         alertDialog.setIcon(R.drawable.ic_baseline_shopping_cart_24);
 
-        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Request request = new Request(
@@ -99,14 +99,14 @@ public class Cart extends AppCompatActivity {
                         .setValue(request);
 
                 new Database(getBaseContext()).cleanCart();
-                Toast.makeText(Cart.this, "Thank you, Order Placed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Cart.this, "Thank you, Order Placed!", Toast.LENGTH_SHORT).show();
                 finish();
 
 
             }
         });
 
-        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
