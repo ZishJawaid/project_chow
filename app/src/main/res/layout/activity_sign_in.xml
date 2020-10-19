@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@android:color/white"
-            android:text="01234"
+            android:text="0900"
             android:textColor="@android:color/white"
             android:textSize="34sp"
             android:inputType="phone"
@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             app:startIconDrawable="@drawable/ic_baseline_smartphone_24"
-            android:text="01234"
+            android:text="0900"
             android:textColor="@android:color/white"
             android:textSize="34sp"
             android:inputType="phone"/>

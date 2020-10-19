@@ -11,7 +11,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listCart"
-        android:background="@android:color/transparent"
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
@@ -52,15 +52,17 @@
             <info.hoang8f.widget.FButton
                 android:id="@+id/btnPlaceOrder"
                 android:text="Place Order"
-                android:textColor="@android:color/black"
-                android:layout_marginRight="8dp"
-                android:layout_marginLeft="8dp"
+                android:textColor="@color/btnText"
+                android:textStyle="bold"
+                android:fontFamily="@font/abeezee"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="10dp"
                 fbutton:fButtonColor="@color/btnSignIn"
-                fbutton:shadowColor="@android:color/black"
+                app:shadowColor="#2d862d"
                 fbutton:shadowEnabled="true"
                 fbutton:shadowHeight="5dp"
                 fbutton:cornerRadius="4dp"
