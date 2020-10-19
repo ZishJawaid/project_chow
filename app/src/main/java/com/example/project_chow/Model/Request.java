@@ -8,6 +8,8 @@ public class Request {
     private String address;
     private String total;
     private List<Order> foods;
+    private String status;
+
 
     public Request() {
     }
@@ -18,6 +20,11 @@ public class Request {
         this.address = address;
         this.total = total;
         this.foods = foods;
+        this.status = "0"; // Placed: 0, Shipping: 1, Shipped: 2
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public String getPhone() {
