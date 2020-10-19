@@ -67,7 +67,7 @@ public class ChefList extends AppCompatActivity {
                     public void onClick(View view, int position, boolean isLongClick) {
                         //Start new activity
                         Intent foodList = new Intent (ChefList.this, FoodList.class);
-                        foodList.putExtra("ChefId", adapter.getRef(position).getKey());
+                        foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
                         startActivity(foodList);
 
                     }
