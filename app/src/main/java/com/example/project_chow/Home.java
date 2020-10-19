@@ -148,7 +148,7 @@ public class Home extends AppCompatActivity {
                 startActivity(cartIntent);
                 break;
             case R.id.nav_orders:
-                Intent orderIntent = new Intent(Home.this, Cart.class);
+                Intent orderIntent = new Intent(Home.this, OrderStatus.class);
                 startActivity(orderIntent);
                 break;
             case R.id.nav_log_out:
