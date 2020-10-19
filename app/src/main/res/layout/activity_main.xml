@@ -69,7 +69,7 @@
             android:text="Sign In"
             android:textColor="@color/btnText"
             android:textStyle="bold"
-            app:shadowColor=" #2d862d "
+            app:shadowColor="#2d862d"
             fbutton:cornerRadius="20dp"
             fbutton:fButtonColor="@color/btnSignIn"
              />

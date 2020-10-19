@@ -25,13 +25,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            android:background="#4f0e0d"
+            android:layout_marginEnd="-5dp"
+            android:layout_marginBottom="82dp"
             android:gravity="center"
             android:text="Name of food"
             android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
