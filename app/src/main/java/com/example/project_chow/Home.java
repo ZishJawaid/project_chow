@@ -85,9 +85,9 @@ public class Home extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Intent foodList = new Intent( Home.this, FoodList.class);
-                        foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
-                        startActivity(foodList);
+                        Intent chefList = new Intent( Home.this, ChefList.class);
+                        chefList.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        startActivity(chefList);
                     }
                 });
             }
