@@ -7,70 +7,94 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     tools:context=".SignIn">
+
+    <ImageView
+        android:layout_width="157dp"
+        android:layout_height="175dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-29dp"
+        android:src="@drawable/chow_logo" />
+
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <EditText
             android:id="@+id/edtPhone"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_edit_text"
             android:hint="Phone Number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@android:color/white"
-            android:text="0900"
-            android:textColor="@android:color/white"
-            android:textSize="34sp"
             android:inputType="phone"
-            app:met_baseColor="@android:color/white"
-            app:met_floatingLabel="highlight"
-            app:met_maxCharacters="11"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            app:startIconDrawable="@drawable/ic_baseline_smartphone_24"
-            android:text="0900"
-            android:textColor="@android:color/white"
-            android:textSize="34sp"
-            android:inputType="phone"/>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/edtPassword"
-            android:hint="Password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:padding="5dip"
+            android:text="Phone Number"
+            android:textColor="@color/btnText"
             android:textColorHint="@android:color/white"
-            android:text="1234"
-            android:textColor="@android:color/white"
-            android:textSize="34sp"
-            android:inputType="textPassword"
-            app:met_baseColor="@android:color/white"
-            app:met_floatingLabel="highlight"
-            app:met_maxCharacters="11"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            />
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Password"
+            android:inputType="text"
+            android:minHeight="50dp"
+            android:padding="5dip"
+            android:text="Password"
+            android:textColor="@color/btnText"
+            android:textColorHint="@android:color/white"
+            android:textSize="15sp" />
+
     </LinearLayout>
+
     <info.hoang8f.widget.FButton
         android:id="@+id/btnSignIn"
-        android:text="Sign In"
-        android:textColor="@android:color/black"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        fbutton:fButtonColor="@color/btnSignIn"
-        fbutton:shadowColor="@android:color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:shadowColor="@color/btnText"
+        android:text="Sign In"
+        android:textColor="@color/btnText"
+        android:textStyle="bold"
+        fbutton:cornerRadius="20dp"
+        fbutton:fButtonColor="@color/btnSignUp"
+        fbutton:shadowColor="@color/btnText"
         fbutton:shadowEnabled="true"
-        fbutton:shadowHeight="5dp"
-        fbutton:cornerRadius="4dp"
-        />
+        fbutton:shadowHeight="5dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="252dp"
+        android:inputType="phone"
+        android:text="0900"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        app:startIconDrawable="@drawable/ic_baseline_smartphone_24" />
+
 </RelativeLayout>
