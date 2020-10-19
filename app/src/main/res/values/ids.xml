@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="chef_image" type="id"></item>
+    <item name="chef_name" type="id"></item>
+    <item name="recycler_chef" type="id"></item>
+</resources>
