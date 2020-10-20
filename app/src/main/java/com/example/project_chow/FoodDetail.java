@@ -3,6 +3,7 @@ package com.example.project_chow;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,6 +30,7 @@ public class FoodDetail extends AppCompatActivity {
     CollapsingToolbarLayout collapsingToolbarLayout;
     FloatingActionButton btnCart;
     ElegantNumberButton numberButton;
+    FloatingActionButton btnHome;
 
     String foodId="";
 
@@ -49,6 +51,7 @@ public class FoodDetail extends AppCompatActivity {
         //Init view
         numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
         btnCart = (FloatingActionButton)findViewById(R.id.btnCart);
+        btnHome = (FloatingActionButton)findViewById(R.id.btnHome);
 
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +66,16 @@ public class FoodDetail extends AppCompatActivity {
                 ));
 
                 Toast.makeText(FoodDetail.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent home = new Intent(FoodDetail.this, Home.class);
+                startActivity(home);
 
             }
         });
