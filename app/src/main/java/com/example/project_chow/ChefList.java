@@ -59,9 +59,11 @@ public class ChefList extends AppCompatActivity {
             @Override
             protected void populateViewHolder(ChefViewHolder viewHolder, Chef model, int position) {
                 viewHolder.chef_name.setText(model.getName());
+                viewHolder.chef_distance.setText(model.getDistance());
+                viewHolder.chef_rating.setText(model.getRating());
+                viewHolder.chef_time.setText(model.getTime());
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(viewHolder.chef_image);
-
                 final Chef local = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
