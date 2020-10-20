@@ -14,6 +14,9 @@ public class ChefViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     public TextView chef_name;
     public ImageView chef_image;
+    public TextView chef_distance;
+    public TextView chef_rating;
+    public TextView chef_time;
 
     private ItemClickListener itemClickListener;
 
@@ -25,7 +28,11 @@ public class ChefViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         super(itemView);
 
         chef_name = (TextView)itemView.findViewById(R.id.chef_name);
+        chef_distance = (TextView)itemView.findViewById(R.id.chef_distance);
+        chef_rating = (TextView)itemView.findViewById(R.id.chef_rating);
+        chef_time = (TextView)itemView.findViewById(R.id.chef_time);
         chef_image = (ImageView)itemView.findViewById(R.id.chef_image);
+
 
         itemView.setOnClickListener(this);
     }
