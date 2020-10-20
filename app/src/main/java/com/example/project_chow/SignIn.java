@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +36,6 @@ public class SignIn extends AppCompatActivity {
         btnSignIn = (Button)findViewById(R.id.btnSignIn);
 
         // init Firebase
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
 
@@ -50,12 +50,19 @@ public class SignIn extends AppCompatActivity {
                 table_user.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                         // check if user does not exist in DB
                         if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
+
                             // Get user info
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
+//                            user = datasnapshot.child("500").getValue(Name, Password, Phone)
+                            Log.d("TAG-NAME", user.getName());
+                            Log.d("TAG-PHONE", user.getPhone());
+                            assert user != null;
                             user.setPhone(edtPhone.getText().toString());
+
                             if(user.getPassword().equals(edtPassword.getText().toString()))
                             {
                                 Intent homeIntent = new Intent(SignIn.this, Home.class);
@@ -76,7 +83,7 @@ public class SignIn extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });

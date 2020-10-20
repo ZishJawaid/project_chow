@@ -14,6 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.project_chow.Cart;
+import com.example.project_chow.Common.Common;
+import com.example.project_chow.Database.Database;
 import com.example.project_chow.Interface.ItemClickListener;
 import com.example.project_chow.R;
 import com.example.project_chow.Model.Order;
@@ -23,58 +27,65 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-
-    public TextView txt_cart_name, txt_price;
-    public ImageView img_cart_count;
-
-    private ItemClickListener itemClickListener;
-
-    public void setTxt_cart_name(TextView txt_cart_name) {
-        this.txt_cart_name = txt_cart_name;
-    }
-
-    public CartViewHolder(@NonNull View itemView) {
-        super(itemView);
-        txt_cart_name = (TextView)itemView.findViewById(R.id.cart_item_name);
-        txt_price = (TextView)itemView.findViewById(R.id.cart_item_Price);
-        img_cart_count = (ImageView)itemView.findViewById(R.id.cart_item_count);
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-}
 
 public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
 
     private List<Order> listData = new ArrayList<>();
-    private Context context;
+    private Cart cart;
 
-    public CartAdapter(List<Order> listData, Context context) {
+    public CartAdapter(List<Order> listData, Cart cart) {
         this.listData = listData;
-        this.context = context;
+        this.cart = cart;
     }
 
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
+        LayoutInflater inflater = LayoutInflater.from(cart);
         View itemView = inflater.inflate(R.layout.cart_layout, parent, false);
+
         return new CartViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        TextDrawable drawable = TextDrawable.builder().beginConfig().width(400).height(400).endConfig()
-                .buildRound(""+listData.get(position).getQuantity(), Color.BLACK);
-        holder.img_cart_count.setImageDrawable(drawable);
+    public void onBindViewHolder(@NonNull CartViewHolder holder, final int position) {
+//        TextDrawable drawable = TextDrawable.builder()
+//                .buildRound(""+listData.get(position).getQuantity(), Color.RED);
+//        holder.img_cart_count.setImageDrawable(drawable);
+
+        holder.btn_quantity.setNumber(listData.get(position).getQuantity());
+        holder.btn_quantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+            @Override
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+                Order order = listData.get(position);
+                order.setQuantity(String.valueOf(newValue));
+                new Database(cart).updateCart(order);
+
+                //Update txtTotal
+                //Calculate total price
+                int total = 0;
+
+                List<Order> orders = new Database(cart).getCarts(Common.currentUser.getPhone());
+
+                for (Order item : orders)
+                    total += (Integer.parseInt(item.getPrice())) * (Integer.parseInt(item.getQuantity()));
+
+                Locale locale = new Locale("en", "GB");
+                NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
+
+                cart.txtTotalPrice.setText(fmt.format(total));
+            }
+        });
+
 
         Locale locale = new Locale("en", "GB");
+
+
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
+
         int price = (Integer.parseInt(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
+
         holder.txt_price.setText(fmt.format(price));
         holder.txt_cart_name.setText(listData.get(position).getProductName());
 
@@ -83,5 +94,22 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
     @Override
     public int getItemCount() {
         return listData.size();
+    }
+
+    public Order getItem(int position)
+    {
+        return listData.get(position);
+    }
+
+    public void removeItem(int position)
+    {
+        listData.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void restoreItem(Order item, int position)
+    {
+        listData.add(position, item);
+        notifyItemInserted(position);
     }
 }

@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.project_chow.Common.Common;
 import com.example.project_chow.Database.Database;
 import com.example.project_chow.Model.Food;
 import com.example.project_chow.Model.Order;
@@ -53,10 +55,14 @@ public class FoodDetail extends AppCompatActivity {
         btnCart = (FloatingActionButton)findViewById(R.id.btnCart);
         btnHome = (FloatingActionButton)findViewById(R.id.btnHome);
 
+
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new Database(getBaseContext()).addToCart(new Order(
+                        //        TODO: Change here
+//                        "0222",
+                        Common.currentUser.getPhone(),
                         foodId,
                         currentFood.getName(),
                         numberButton.getNumber(),

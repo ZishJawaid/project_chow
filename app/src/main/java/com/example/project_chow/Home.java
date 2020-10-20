@@ -81,6 +81,8 @@ public class Home extends AppCompatActivity {
 
         View headerView = navigationView.getHeaderView(0);
         txtFullName = (TextView)headerView.findViewById(R.id.txtFullName);
+        //        TODO: Change here
+//        txtFullName.setText("yeah");
         txtFullName.setText(Common.currentUser.getName());
 
         recycler_menu = (RecyclerView)findViewById(R.id.recycler_menu);
@@ -102,8 +104,6 @@ public class Home extends AppCompatActivity {
                     }
                 });
     }
-
-
 
 
     private void loadMenu() {
