@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.project_chow.Interface.ItemClickListener;
@@ -65,6 +66,7 @@ public class ChefList extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
+
                         //Start new activity
                         Intent foodList = new Intent (ChefList.this, FoodList.class);
                         foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
