@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="210dp"
+        android:layout_marginTop="214dp"
         android:background="@drawable/rounded_edit_text"
         android:hint="Name"
         android:inputType="text"
