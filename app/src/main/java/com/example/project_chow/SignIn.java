@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,8 +57,12 @@ public class SignIn extends AppCompatActivity {
                             // Get user info
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
+//                            user = datasnapshot.child("500").getValue(Name, Password, Phone)
+                            Log.d("TAG-NAME", user.getName());
+                            Log.d("TAG-PHONE", user.getPhone());
                             assert user != null;
                             user.setPhone(edtPhone.getText().toString());
+
                             if(user.getPassword().equals(edtPassword.getText().toString()))
                             {
                                 Intent homeIntent = new Intent(SignIn.this, Home.class);

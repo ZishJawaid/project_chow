@@ -39,24 +39,24 @@ public class MainActivity extends AppCompatActivity {
         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/ABeeZee-Regular.ttf");
         txtSlogan.setTypeface(face);
 
-        database = FirebaseDatabase.getInstance();
-        final DatabaseReference table_user = database.getReference("User");
-
-        table_user.addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange (@NonNull DataSnapshot dataSnapshot){
-            User localUser = dataSnapshot.getValue(User.class);
-            Intent homeIntent = new Intent(MainActivity.this, Home.class);
-            Common.currentUser = localUser;
-            startActivity(homeIntent);
-            finish();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        database = FirebaseDatabase.getInstance();
+//        final DatabaseReference table_user = database.getReference("User");
+//
+//        table_user.addValueEventListener(new ValueEventListener() {
+//        @Override
+//        public void onDataChange (@NonNull DataSnapshot dataSnapshot){
+//            User localUser = dataSnapshot.getValue(User.class);
+//            Intent homeIntent = new Intent(MainActivity.this, Home.class);
+//            Common.currentUser = localUser;
+//            startActivity(homeIntent);
+//            finish();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
