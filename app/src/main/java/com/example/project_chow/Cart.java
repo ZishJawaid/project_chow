@@ -169,7 +169,7 @@ public class Cart extends AppCompatActivity implements RecyclerItemTouchHelperLi
             List<Order> orders = new Database(getBaseContext()).getCarts(Common.currentUser.getPhone());
             for (Order item : orders)
                 total += (Integer.parseInt(item.getPrice())) * (Integer.parseInt(item.getQuantity()));
-            Locale locale = new Locale("en", "US");
+            Locale locale = new Locale("en", "GB");
             NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
             txtTotalPrice.setText(fmt.format(total));
@@ -189,7 +189,7 @@ public class Cart extends AppCompatActivity implements RecyclerItemTouchHelperLi
 
                     for (Order item : orders)
                         total += (Integer.parseInt(item.getPrice())) * (Integer.parseInt(item.getQuantity()));
-                    Locale locale = new Locale("en", "US");
+                    Locale locale = new Locale("en", "GB");
                     NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
                     txtTotalPrice.setText(fmt.format(total));
