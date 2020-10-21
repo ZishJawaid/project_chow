@@ -99,4 +99,22 @@ public class Database extends SQLiteAssetHelper {
         String query = String.format("DELETE FROM OrderDetail WHERE UserPhone='%s' and ProductId='%s'", userPhone, productId);
         db.execSQL(query);
     }
+
+    public int getCountCart() {
+        int count = 0;
+
+        SQLiteDatabase db = getReadableDatabase();
+//        String query = String.format("SELECT COUNT(*) FROM OrderDetail WHERE UserPhone='%s'", userPhone);
+        String query = String.format("SELECT COUNT(*) FROM OrderDetail");
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+
+            do {
+                count = cursor.getInt(0);
+            } while (cursor.moveToNext());
+
+        }
+        return count;
+    }
 }

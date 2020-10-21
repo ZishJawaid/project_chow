@@ -8,7 +8,10 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.andremion.counterfab.CounterFab;
 import com.example.project_chow.Common.Common;
+import com.example.project_chow.Database.Database;
 import com.example.project_chow.Interface.ItemClickListener;
 import com.example.project_chow.Model.Category;
 import com.example.project_chow.ViewHolder.MenuViewHolder;
@@ -43,6 +46,8 @@ public class Home extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
 
+    CounterFab fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +61,7 @@ public class Home extends AppCompatActivity {
         category = database.getReference("Category");
 
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +69,8 @@ public class Home extends AppCompatActivity {
                 startActivity(cartIntent);
             }
         });
+
+        fab.setCount(new Database(this).getCountCart());
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -92,6 +99,12 @@ public class Home extends AppCompatActivity {
         loadMenu();
 
         setupDrawerContent(navigationView);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        fab.setCount(new Database(this).getCountCart());
     }
 
     private void setupDrawerContent(NavigationView navigationView) {

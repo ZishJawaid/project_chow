@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andremion.counterfab.CounterFab;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.project_chow.Common.Common;
 import com.example.project_chow.Database.Database;
@@ -30,7 +31,7 @@ public class FoodDetail extends AppCompatActivity {
     TextView food_name, food_price, food_description;
     ImageView food_image;
     CollapsingToolbarLayout collapsingToolbarLayout;
-    FloatingActionButton btnCart;
+    CounterFab btnCart;
     ElegantNumberButton numberButton;
     FloatingActionButton btnHome;
 
@@ -52,7 +53,7 @@ public class FoodDetail extends AppCompatActivity {
 
         //Init view
         numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
-        btnCart = (FloatingActionButton)findViewById(R.id.btnCart);
+        btnCart = (CounterFab) findViewById(R.id.btnCart);
         btnHome = (FloatingActionButton)findViewById(R.id.btnHome);
 
 
@@ -75,6 +76,8 @@ public class FoodDetail extends AppCompatActivity {
 
             }
         });
+
+        btnCart.setCount(new Database(this).getCountCart());
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
