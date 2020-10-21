@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
                         if(dataSnapshot.child(edtPhone.getText().toString()).exists())
                         {
                             mDialog.dismiss();
-                            Toast.makeText(SignUp.this, "This number already exists", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUp.this, "Welcome to Chow", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
