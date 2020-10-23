@@ -79,6 +79,6 @@ I want to see my business analytics
 ```
 
 ### Tech Stack ###
-Android
-Java
+Android  
+Java  
 Firebase
