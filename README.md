@@ -99,6 +99,7 @@ Firebase
 
 ### Screenshots ### 
 
-<img src="https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131559_Chow.jpg" width="200" height="400">
-<img src="https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131616_Chow.jpg" width="200" height="400">
+<img src="https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131559_Chow.jpg" width="200" height="400"><img src="https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131616_Chow.jpg" width="200" height="400">
+<img src="https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131645_Chow.jpg" width="200" height="400">
+
 
