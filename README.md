@@ -14,7 +14,7 @@ Our app also allows local consumers  to order delicious, fresh food and produce 
 
 ### User Stories ###
 
-MVP
+**MVP**
 ```
 As a user,
 So that I can order a meal ,
@@ -58,7 +58,7 @@ I want to build a menu
 
 
 
-Bonus
+**Bonus**
 ```
 As a user,
 So that I can provide feedback for others,
