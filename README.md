@@ -99,4 +99,4 @@ Firebase
 
 ### Screenshots ### 
 
-![Menu](https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131559_Chow.jpg)
+<img src="https://github.com/ZishJawaid/project_chow/blob/main/Logos/Screenshot_20201023-131559_Chow.jpg" width="200" height="400">
