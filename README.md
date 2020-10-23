@@ -77,3 +77,8 @@ As a chef,
 So that I view financial performance,
 I want to see my business analytics
 ```
+
+### Tech Stack ###
+Android
+Java
+Firebase
